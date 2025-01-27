@@ -87,3 +87,34 @@ resource "aws_internet_gateway" "igw" {
     owner = "aravetiamulya@gmail.com"
   }
 }
+
+
+resource "aws_route_table" "web-public-rt" {
+  vpc_id = "${aws_vpc.vpc-dev.id}"
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = "${aws_internet_gateway.igw.id}"
+  }
+
+  tags = {
+    Name = "web-pub-rt-us-east-1"
+    environment = "dev"
+    owner = "aravetiamulya@gmail.com"
+  }
+}
+
+resource "aws_route_table_association" "web-public-rt-assoc_1" {
+  subnet_id      = aws_subnet.public-subnet-1.id
+  route_table_id = aws_route_table.web-public-rt.id
+}
+
+resource "aws_route_table_association" "web-public-rt-assoc_2" {
+  subnet_id      = aws_subnet.public-subnet-2.id
+  route_table_id = aws_route_table.web-public-rt.id
+}
+
+resource "aws_route_table_association" "web-public-rt-assoc_3" {
+  subnet_id      = aws_subnet.public-subnet-3.id
+  route_table_id = aws_route_table.web-public-rt.id
+}
