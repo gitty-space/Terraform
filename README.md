@@ -15,7 +15,7 @@ Create a **Virtual Private Cloud (VPC)** with both **public** and **private subn
   - A route table for public subnets with a default route to the internet gateway.
   - Route table associations for each public subnet.
 - **Security Groups:**
-  - A web security group allowing HTTP, HTTPS, SSH, and ICMP traffic.
+  - A web security group allowing HTTP, HTTPS, SSH traffic.
   - A private security group allowing traffic between public subnets.
 - **Instance Configuration:** A sample EC2 instance (not included here) can be launched in public subnets with a security group[ Allow HTTP Connections via port 80]
 
