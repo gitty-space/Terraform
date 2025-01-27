@@ -37,3 +37,13 @@ variable "private_subnet_3_cidr" {
   description = "CIDR for the private subnet 3"
   default = "10.0.6.0/24"
 }
+
+variable "ami" {
+  description = "AMI for EC2"
+  default = "ami-0ac4dfaf1c5c0cce9"
+}
+
+variable "key_name" {
+  description = "SSH Public Key"
+  default = "vpckeypair"
+}
