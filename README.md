@@ -41,3 +41,23 @@ The configuration uses the following variables:
 | `ami`                   | Amazon Machine Image (AMI) for EC2 instances | `ami-0abcdef1234567890` |
 | `key_name`              | Name of the AWS key pair for EC2 instances | `my-key-pair`         |
 
+
+## Usage
+
+1. Git clone
+---
+    git clone https://github.com/gitty-space/Terraform.git
+    cd Terraform
+---
+2. Terraform
+---
+    terraform init
+    terraform plan
+    terraform apply
+---
+3. After Testing Cleanup Resources 
+---
+    terraform destroy
+---
+
+        
