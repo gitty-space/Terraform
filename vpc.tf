@@ -78,3 +78,12 @@ resource "aws_subnet" "private-subnet-3" {
     owner = "aravetiamulya@gmail.com"
   }
 }
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = "${aws_vpc.vpc-dev.id}"
+  tags = {
+    Name = "igw-vpc-dev-us-east-1"
+    environment = "dev"
+    owner = "aravetiamulya@gmail.com"
+  }
+}
